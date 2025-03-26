@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>practica expo 1</title>
+
+</head>
+<body>
+	<img id="imagen"  src="flor.png" style="width:100px">
+	<button type="button" onclick="cambiarImg()">Cambia imagen</button>
+	<button type="button" onclick="revierte()">Revierte imagen</button>
+
+	
+	<script>
+		function cambiarImg(){
+		document.getElementById("imagen").src = "flor2.webp";
+
+		}
+		function revierte(){
+		document.getElementById("imagen").src = "flor.png";
+		}
+	</script>
+
+</body>
+</html>
