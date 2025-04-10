@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+<body>
+    <script>
+    // Crear una función que procesa el nombre
+    function procesarNombre(nombre) {
+    // 1. Convertir el nombre a mayúsculas
+        const nombreMayusculas = nombre.toUpperCase();
+        
+        // 2. Verificar si el nombre contiene la letra "E"
+        const contieneE = nombreMayusculas.includes("E");
+        
+        // 3. Obtener la primera letra del nombre
+        const primeraLetra = nombreMayusculas.charAt(0);
+        
+        // 4. Construir y devolver el mensaje
+        return `HOLA, ${nombreMayusculas}. TU NOMBRE CONTIENE LA LETRA E: ${contieneE}. EMPIEZA CON: ${primeraLetra}`;
+    }
+
+    // Ejemplo de uso
+    console.log(procesarNombre("Bere")); 
+    // Imprime: "HOLA, BERE. TU NOMBRE CONTIENE LA LETRA E: true. EMPIEZA CON: B"
+    </script>
+
+</body>
+</html>
