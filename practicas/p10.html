@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script>
+		// Definimos la función constructora
+		function Estudiante(nombre, edad, curso, activo) {
+		    this.nombre = nombre;
+		    this.edad = edad;
+		    this.curso = curso;
+		    this.activo = activo;
+		    this.saludar = function() {
+		        return `¡Hola! Me llamo ${this.nombre} y estoy en el curso de ${this.curso}.`;
+		    };
+		}
+
+		// Crear múltiples objetos utilizando la función constructora
+		const estudiante1 = new Estudiante("Andres", 22, "Programación Web", true);
+		const estudiante2 = new Estudiante("Juan", 30, "Desarrollo de Software", false);
+		const estudiante3 = new Estudiante("Ana", 19, "Ingeniería de Datos", true);
+
+		// Mostrar información de los objetos en la consola
+		console.log(estudiante1.saludar());
+		console.log(estudiante2.saludar());
+		console.log(estudiante3.saludar());
+
+
+	</script>
+
+</body>
+</html>
+

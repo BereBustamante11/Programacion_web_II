@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Objeto JS Display</title>
+</head>
+<body>
+    <script>
+        // Crear el objeto
+        const estudiante = {
+            nombre: "Andres",
+            edad: 22,
+            curso: "Programación Web",
+            activo: true
+        };
+
+        // Mostrar propiedades en la consola
+        console.log("Propiedades del objeto:");
+        for (let propiedad in estudiante) {
+            console.log(`${propiedad}: ${estudiante[propiedad]}`);
+        }
+    </script>
+</body>
+</html>
