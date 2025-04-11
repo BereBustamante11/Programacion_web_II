@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Número Par</title>
+</head>
+<body>
+    <h1>¿Es un Número Par?</h1>
+    <form id="parForm">
+        <label for="numero">Ingresa un número:</label>
+        <input type="number" id="numero" required>
+        <br>
+        <button type="button" onclick="verificarPar()">Verificar</button>
+    </form>
+    <p id="resultadoPar"></p>
+
+    <script>
+        // Función que verifica si un número es par o impar
+        function esPar(numero) {
+            return numero % 2 === 0;
+        }
+
+        // Función que muestra el resultado en la página
+        function verificarPar() {
+            const numero = document.getElementById("numero").value;
+
+            if (numero === "") {
+                document.getElementById("resultadoPar").textContent = "Por favor, ingresa un número.";
+                return;
+            }
+
+            const esNumeroPar = esPar(Number(numero)); // Convertimos el valor a número
+            const resultado = esNumeroPar ? 
+                `El número ${numero} es par.` : 
+                `El número ${numero} es impar.`;
+            document.getElementById("resultadoPar").textContent = resultado;
+        }
+    </script>
+</body>
+</html>

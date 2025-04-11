@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones con BigInt</title>
+</head>
+<body>
+    <h1>Operaciones con BigInt</h1>
+    <p id="resultadoBigInt"></p>
+
+    <script>
+        // Declaración de variables BigInt
+        const numeroGrande = 9007199254740991n;
+        const otroNumeroGrande = 10000000000000000n;
+
+        // Operación entre BigInt
+        const suma = numeroGrande + otroNumeroGrande;
+
+        // Mostrar el resultado
+        document.getElementById("resultadoBigInt").textContent = 
+            `La suma de ${numeroGrande} y ${otroNumeroGrande} es ${suma}.`;
+    </script>
+</body>
+</html>
