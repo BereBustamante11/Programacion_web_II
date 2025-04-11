@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Propiedades de Número - Ejercicio</title>
+
+</head>
+<body>
+  <h1>Propiedades de Número - Ejercicio</h1>
+  
+  <!-- Solicitamos que el usuario ingrese un número -->
+  <p>Ingresa un número:</p>
+  <input type="text" id="numero" placeholder="Ejemplo: 10000000000000000">
+  <button type="button" onclick="analizarNumero()">Analizar número</button>
+  
+  <!-- Lugar donde se mostrará el resultado -->
+  <p id="resultado"></p>
+
+  <script>
+    function analizarNumero() {
+      // Obtiene y procesa la entrada del usuario
+      const entrada = document.getElementById("numero").value.trim();
+      const num = parseFloat(entrada);
+      
+      let mensaje = "";
+      
+      // Verifica si la conversión produjo un número válido
+      if (isNaN(num)) {
+        mensaje = "El valor ingresado no es un número (NaN).";
+      } 
+      // Verifica si el número es mayor que el máximo entero seguro
+      else if (num > Number.MAX_SAFE_INTEGER) {
+        mensaje = "El número es mayor que MAX_SAFE_INTEGER.";
+      } 
+      // Verifica si el número es menor que el mínimo entero seguro
+      else if (num < Number.MIN_SAFE_INTEGER) {
+        mensaje = "El número es menor que MIN_SAFE_INTEGER.";
+      } 
+      
+      else if (num > 0 && num < Number.MIN_VALUE) {
+        mensaje = "El número es menor que MIN_VALUE.";
+      } 
+      // Si ninguna condición especial se cumple, se considera un número válido.
+      else {
+        mensaje = "El número es válido.";
+      }
+      document.getElementById("resultado").textContent = mensaje;
+    }
+  </script>
+</body>
+</html>

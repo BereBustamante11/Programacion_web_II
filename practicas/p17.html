@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio de Arreglos</title>
+</head>
+<body>
+
+  <!-- Se muestra la lista original de estudiantes -->
+  <p id="listaOriginal"></p>
+
+  <!-- Se solicita al usuario el nombre de un estudiante -->
+  <label for="nombreBusqueda">Ingresa el nombre del estudiante:</label>
+  <input type="text" id="nombreBusqueda" placeholder="Ej. Ana">
+  <button type="button" onclick="buscarEstudiante()">Buscar Estudiante</button>
+  <p id="resultadoBusqueda"></p>
+
+  <!-- Se muestra la lista ordenada -->
+  <p id="listaOrdenada"></p>
+
+  <script>
+    // 1. Declarar un arreglo con al menos 5 nombres de estudiantes
+    const estudiantes = ["Juan", "Ana", "Carlos", "María", "Pedro"];
+
+    // 2. Mostrar todos los nombres en una sola línea separados por comas
+    document.getElementById("listaOriginal").textContent = 
+      "Lista de estudiantes: " + estudiantes.join(", ");
+
+    // 3. Función para buscar el nombre ingresado por el usuario
+    function buscarEstudiante() {
+      const nombreBuscado = document.getElementById("nombreBusqueda").value.trim();
+      
+      // Validación simple: verificar que se haya ingresado algún valor
+      if (nombreBuscado === "") {
+        document.getElementById("resultadoBusqueda").textContent = 
+          "Por favor, ingresa un nombre a buscar.";
+        return;
+      }
+      
+      // Usando el método includes() para saber si el nombre está en el arreglo
+      if (estudiantes.includes(nombreBuscado)) {
+        document.getElementById("resultadoBusqueda").textContent = 
+          "El estudiante está en la lista.";
+      } else {
+        document.getElementById("resultadoBusqueda").textContent = 
+          "El estudiante no está en la lista.";
+      }
+    }
+
+    // 4. Ordenar alfabéticamente los nombres en el arreglo
+    estudiantes.sort();
+
+    // 5. Mostrar la lista de nombres ordenada en una sola línea
+    document.getElementById("listaOrdenada").textContent = 
+      "Lista de estudiantes ordenada: " + estudiantes.join(", ");
+  </script>
+</body>
+</html>

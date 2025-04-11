@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Análisis de un Número - Entrada del Usuario</title>
+</head>
+<body>
+  <script>
+    // Se solicita al usuario que ingrese un número
+    let entrada = prompt("Por favor, ingresa un número:");
+    let numero = parseFloat(entrada);
+
+    // Verificación de la conversión del valor a número
+    if (isNaN(numero)) {
+      console.log("El valor ingresado no es un número válido.");
+    } else {
+      // Salida en consola con el formato requerido
+      console.log("--- Análisis del Número ---");
+      console.log("Número original: " + numero);
+      console.log("¿Es entero? " + (Number.isInteger(numero) ? "Sí" : "No"));
+      console.log("Redondeado a 2 decimales: " + numero.toFixed(2));
+      console.log("Notación científica (3 dígitos): " + numero.toExponential(3));
+    }
+  </script>
+</body>
+</html>
